@@ -1,10 +1,6 @@
 import { Routes } from '@angular/router';
-import { CountPageComponent } from './count/counter.components';
+import { CounterPageComponent } from './pages/counter/counter-page.component';
 
 export const routes: Routes = [
-    {
-        path: '',
-        component: CountPageComponent
-    }
+    { path: '', component: CounterPageComponent },
 ];
-

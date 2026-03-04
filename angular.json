@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "count-app": {
+    "bases": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -26,15 +26,7 @@
             ],
             "styles": [
               "src/styles.css"
-            ],
-            "server": "src/main.server.ts",
-            "outputMode": "server",
-            "security": {
-              "allowedHosts": []
-            },
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -64,10 +56,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "count-app:build:production"
+              "buildTarget": "bases:build:production"
             },
             "development": {
-              "buildTarget": "count-app:build:development"
+              "buildTarget": "bases:build:development"
             }
           },
           "defaultConfiguration": "development"
