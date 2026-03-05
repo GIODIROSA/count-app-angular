@@ -20,7 +20,7 @@ export class HeroPageComponent {
     });
 
     changeHero(): void {
-        this.name.update((name) => 'Spiderman');
+        this.name.set('Spiderman');
     }
 
     changeAge(): void {
