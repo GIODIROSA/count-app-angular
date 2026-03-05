@@ -1,0 +1,48 @@
+<main class="flex flex-col items-center justify-center h-screen">
+  <article class="bg-gray-50 p-4 rounded-lg shadow-md w-full max-w-md flex flex-col gap-2">
+    <h1 class="text-2xl font-bold mb-4 text-center">{{ name() }}</h1>
+
+    <dl class="flex flex-col gap-2">
+      <div class="flex justify-between">
+        <td class="font-bold">Nombre:</td>
+        <dd>{{ name() }}</dd>
+      </div>
+
+      <div class="flex justify-between">
+        <td class="font-bold">Edad:</td>
+        <dd>{{ age() }}</dd>
+      </div>
+
+      <div class="flex justify-between">
+        <td class="font-bold">Método:</td>
+        <dd>{{ getHeroDescription() }}</dd>
+      </div>
+
+      <div class="flex justify-between">
+        <td class="font-bold">Capitalizado:</td>
+        <dd>{{ name() | uppercase }}</dd>
+      </div>
+    </dl>
+
+    <button
+      (click)="changeHero()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 mt-2 cursor-pointer active:scale-95"
+    >
+      Cambiar nombre
+    </button>
+
+    <button
+      (click)="changeAge()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 mt-2 cursor-pointer active:scale-95"
+    >
+      Cambiar edad
+    </button>
+
+    <button
+      (click)="resetForm()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-2 mt-2 cursor-pointer active:scale-95"
+    >
+      Reset
+    </button>
+  </article>
+</main>
