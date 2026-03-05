@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { CounterComponentPago } from './counter/counter-page.component';
+import { CounterComponentPago } from './pages/counter/counter-page.component';
 
 export const routes: Routes = [
     {
