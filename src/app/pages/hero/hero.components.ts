@@ -14,17 +14,25 @@ export class HeroPageComponent {
     name = signal('Ironman');
     age = signal(25);
 
-
-    getHeroDescription = computed(() => {
-        return `${this.name()} - ${this.age()}`;
+    heroDescription = computed(() => {
+       const description = `${this.name()} - ${this.age()}`;
+       return description;
     });
+
+    capitalizeName = computed(() => {
+        return this.name().toUpperCase();
+    });
+
+    getHeroDescription() {
+        this.heroDescription
+    }
 
     changeHero(): void {
         this.name.set('Spiderman');
     }
 
     changeAge(): void {
-        this.age.update((age) => age + 1);
+        this.age.set(60);
     }
 
     resetForm(): void {
