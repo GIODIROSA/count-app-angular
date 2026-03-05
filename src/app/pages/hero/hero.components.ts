@@ -19,15 +19,15 @@ export class HeroPageComponent {
         return `${this.name()} - ${this.age()}`;
     });
 
-    changeHero() {
+    changeHero(): void {
         this.name.update((name) => 'Spiderman');
     }
 
-    changeAge() {
+    changeAge(): void {
         this.age.update((age) => age + 1);
     }
 
-    resetForm() {
+    resetForm(): void {
         this.name.set('Ironman');
         this.age.set(25);
     }
