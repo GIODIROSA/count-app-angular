@@ -1,0 +1,23 @@
+<main class="flex flex-col items-center justify-center h-screen">
+  <article class="flex flex-col items-center justify-center gap-4">
+    <h1 class="text-3xl font-bold">Contador: {{ counter }}</h1>
+    <button
+      (click)="increaseBy(1)"
+      class="bg-green-500 hover:bg-green-700 text-white py-2 px-4 rounded-lg active:scale-90 cursor-pointer"
+    >
+      +1
+    </button>
+    <button
+      (click)="increaseBy(-1)"
+      class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded-lg active:scale-90 cursor-pointer"
+    >
+      -1
+    </button>
+    <button
+      (click)="resetCounter()"
+      class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg active:scale-90 cursor-pointer"
+    >
+      Reset
+    </button>
+  </article>
+</main>
