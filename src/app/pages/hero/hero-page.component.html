@@ -1,0 +1,27 @@
+<div class="max-w-md mx-auto mt-6 p-6 bg-white rounded-xl shadow-lg">
+<h1>{{name()}}</h1>
+
+<dl>
+    <dt>Nombre:</dt>
+    <dd>{{name()}}</dd>
+
+    <dt>Edad:</dt>
+    <dd>{{age()}}</dd>
+
+    <dt>Método:</dt>
+    <dd>{{ getHeroDescription() }}</dd>
+
+    <dt>Capitalizado:</dt>
+    <dd>{{ name().toUpperCase() }}</dd>
+</dl>
+
+<button (click)="changeHero()" class="bg-blue-600 text-white px-2 py-2 rounder-md hover:bg-blue-700 mx-3">
+  Cambiar nombre
+</button>
+
+<button (click)="chageAge()" class="bg-blue-600 text-white px-2 py-2 rounder-md hover:bg-blue-700 mx-3">Cambiar edad</button>
+
+<button (click)="resetForm()" class="bg-red-600 text-white px-2 py-2 rounder-md hover:bg-red-800 mx-3">
+    reset
+</button>
+</div>
