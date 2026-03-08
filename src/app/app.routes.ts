@@ -6,10 +6,14 @@ export const routes: Routes = [
     {
         path: '',
         component: CountPageComponent
-    }, 
+    },
     {
-         path: 'hero',
+        path: 'hero',
         component: HeroPageComponent
-  }
+    },
+    {
+        path: "**",
+        redirectTo: ""
+    }
 ];
 
