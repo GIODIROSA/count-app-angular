@@ -26,12 +26,19 @@ Este documento registra el progreso, las decisiones arquitectónicas y los apren
 - **Documentación**: Creación del archivo `aprendizaje-angular.md` para seguimiento.
 - **Implementación de Signals**: Se integró `signal` para manejar el estado del contador de forma reactiva, asegurando que el valor no sea inferior a 0 mediante `Math.max`.
 
+### 2026-03-08
+- **Estructura de Navegación**: Creación de un componente Navbar compartido.
+- **Rutas Anidadas**: Organización de páginas en `src/app/pages`.
+- **Corrección de Rutas**: Aprendizaje sobre evitar el `/` inicial en las configuraciones de `Routes`.
+
 ---
 
 ## Conceptos Clave Aprendidos
-1. **Angular SSR**: La estructura incluye archivos específicos para servidor como `app.config.server.ts` y `main.server.ts`, lo que indica una hidratación del lado del servidor.
-2. **Tailwind v4**: Se observa la integración de `@tailwindcss/postcss` en las dependencias de desarrollo.
-3. **Signals (`signal`, `update`, `set`)**:
-    - `signal(initialValue)`: Crea un valor reactivo.
-    - `update(fn)`: Permite actualizar el valor basado en el estado anterior. Es ideal para lógica condicional como `Math.max(0, current + value)`.
-    - `set(value)`: Reemplaza el valor directamente (útil para el `reset`).
+1. **Angular SSR**: Hidratación en el servidor (Hydration). Un HTML inválido (como `<td>` fuera de `<table>`) rompe la hidratación (Error NG0500).
+2. **Tailwind v4**: Uso de PostCSS.
+3. **Signals (`signal`, `update`, `set`, `computed`)**:
+    - `computed`: Crea un valor derivado reactivo que se actualiza automáticamente cuando cambian los signals de los que depende.
+4. **Pipes**: Uso de `UpperCasePipe` directamente en el componente (`imports: [UpperCasePipe]`) para transformar texto en el template.
+5. **Navegación (`RouterLink`, `RouterLinkActive`)**:
+    - `routerLinkActive="clase"`: Aplica una clase cuando la ruta está activa.
+    - `[routerLinkActiveOptions]="{ exact: true }"`: Esencial para la ruta raíz `/`, para evitar que siempre aparezca como "activa" cuando navegamos a otras rutas.
