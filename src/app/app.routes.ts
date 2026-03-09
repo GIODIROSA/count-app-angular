@@ -1,16 +1,23 @@
 import { Routes } from '@angular/router';
-//import { CounterComponentPago } from './pages/counter/counter-page.component';
 import { HeroPageComponent } from './pages/hero/hero-page.component';
+import { CounterComponentPago } from './pages/counter/counter-page.component';
+import { DragonballPageComponent } from './pages/dragonball/dragonball-page.component';
 
 export const routes: Routes = [
-    //{
-        //path: '',
-        //component: CounterComponentPago,
-
-    //},
     {
-        path : 'hero',
+        path: 'counter',
+        component: CounterComponentPago,
+
+    },
+    {
+        path : '',
         component: HeroPageComponent,
+    },
+    {
+        path: 'dragonball',
+        component: DragonballPageComponent,
     }
+    
+
 ];
 

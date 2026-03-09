@@ -1,8 +1,20 @@
-<h1>Counter: {{counter}}</h1>
-<h1>Counter signal: {{counterSignal()}}</h1>
+<div class="flex flex-col items-center max-w-sm mx-auto mt-10 p-6 bg-slate-50 rounded-xl shadow-lg border border-slate-200">
 
-<hr />
-<button (click)="increaseBy(1)" class="button">+1</button>
-<button (click)="increaseBy(-1)" class="button">-1</button>
-<button (click)="resetCounter()" class="button">Reset</button>
-<hr />
+  <h1 class="text-3xl font-bold text-slate-800">Counter: {{counter}}</h1>
+  <h1 class="text-xl font-semibold text-slate-500 mt-2">Counter signal: {{counterSignal()}}</h1>
+
+  <div class="w-full mt-4">
+    <hr class="border-slate-300 my-4" />
+    
+    <div class="flex justify-center gap-3">
+      <button (click)="increaseBy(1)" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">+1</button>
+      
+      <button (click)="increaseBy(-1)" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors">-1</button>
+      
+      <button (click)="resetCounter()" class="bg-gray-600 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors">Reset</button>
+    </div>
+    
+    <hr class="border-slate-300 my-4" />
+  </div>
+
+</div>
