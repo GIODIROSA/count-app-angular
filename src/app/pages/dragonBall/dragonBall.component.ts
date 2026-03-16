@@ -14,6 +14,9 @@ interface Character {
 })
 export class DragonBallPageComponent {
 
+    name = signal('Gohan');
+    power = signal(100);
+
     characters = signal<Character[]>([
         { id: 1, name: 'Goku', power: 15000, active: true },
         { id: 2, name: 'Vegeta', power: 12000, active: true },
