@@ -17,6 +17,7 @@
         <h3>Listado</h3>
         <ul>
             @for (character of characters(); track character.id; let idx= $index) {
+            @if (character.power > 10000) {
                 <li>
                     <span>{{ idx + 1 }}.- {{ character.name }} </span>
                     <strong 
@@ -24,8 +25,12 @@
                     [class.text-info]="character.power < 10000"
                     >{{ character.power }}</strong>
                 </li>
+            }@else {
+                <li>
+                   <span>No es permitido </span>
+                </li>
             }
-           
+        }
         </ul>
     </div>
 

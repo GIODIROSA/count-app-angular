@@ -18,6 +18,7 @@ export class DragonBallPageComponent {
         { id: 1, name: 'Goku', power: 15000, active: true },
         { id: 2, name: 'Vegeta', power: 12000, active: true },
         { id: 3, name: 'Piccolo', power: 8000, active: true },
+        { id: 4, name: 'Gohan', power: 800, active: true },
     ]);
 
     powerClasses = computed(() => {
