@@ -30,6 +30,16 @@ export class DragonBallPageComponent {
         }
     });
 
+    addCharacter() {
+        const newCharacter: Character = {
+            id: this.characters().length + 1,
+            name: this.name(),
+            power: Number(this.power()),
+            active: true
+        };
+        this.characters.update(characters => [...characters, newCharacter]);
+    }
+
 }
 
 
