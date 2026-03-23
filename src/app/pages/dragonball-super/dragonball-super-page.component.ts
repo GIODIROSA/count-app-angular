@@ -1,4 +1,4 @@
-import { Component, signal, computed } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 interface Character{
   id: number;
@@ -7,24 +7,18 @@ interface Character{
 }
 
 @Component({
-  selector: 'app-dragonball-page.component',
+  selector: 'app-dragonball-super-page',
   imports: [],
-  templateUrl: './dragonball-page.component.html',
+  templateUrl: './dragonball-super-page.component.html',
 })
-export class DragonballPageComponent {
+export class DragonballSuperPageComponent {
 
   name = signal('')
   power = signal(0)
-
-  highPowerCount = computed(() => {
-    return this.characters().filter( power => power.power > 8000).length;
-  })
   
   characters = signal<Character[]>([
     {id: 1, name: 'Goku', power: 10000},
     {id: 2, name: 'Vegeta', power: 9000},
-    {id: 3, name: 'Piccolo', power: 7000},
-    {id: 4, name: 'Gohan', power: 7000},
   ]);
 
   addCharacter(){
