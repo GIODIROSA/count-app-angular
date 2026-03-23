@@ -1,27 +1,29 @@
-export enum eventStatus {
-    fullybooked= "Fullybooked",
+export enum EventStatus {
+    fullybooked = "Fullybooked",
     CurrentExhibition = "Current exhibition",
     Available = "Available",
-    cancelled= "Cancelled"
+    cancelled = "Cancelled"
 }
 
-export enum EventCategory{
+export enum EventCategory {
     Concert = "Concert",
     Festival = "Festival",
-    Movie = "Movie",    
-    Other = "Other"
+    Movie = "Movie",
+    Other = "Other",
+    Meeting = "Meeting"
 }
 
-export interface Event {
+export interface CalendarEvent {
     id: string | number;
     title: string;
-    description: string;
+    description?: string;
     date: Date;
-   location: string;
-   category: EventCategory;
-   status: eventStatus;
-   imageUrl: string;
-   organizer: string;
-   createdAt: Date;
-   updatedAt: Date;
+    location: string;
+    category: EventCategory;
+    status: EventStatus;
+    imageUrl?: string;
+    organizer: string;
+    createdAt: Date;
+    updatedAt: Date;
+    price: number;
 }
