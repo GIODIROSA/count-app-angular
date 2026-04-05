@@ -1,18 +1,20 @@
 <style>
-    nav{
+    nav {
         display: flex;
         justify-content: space-around;
-        background-color: #212121;
-        color: #fff;
+        background-color: #f5f4ed;
+        color: #ccc;
         padding: 10px;
-    
+
     }
+
     nav a {
-        color: #fff;
+       color: #ccc;
         text-decoration: none;
     }
+
     nav a.active {
-        color: red;
+        color: #ff6037;
     }
 </style>
 
@@ -29,7 +31,11 @@
         DragonBall
     </a>
 
-      <a [routerLink]="['/event']" routerLinkActive="active">
+    <a [routerLink]="['/event']" routerLinkActive="active">
         Eventos
+    </a>
+
+    <a [routerLink]="['/admin']" routerLinkActive="active">
+        Admin
     </a>
 </nav>
