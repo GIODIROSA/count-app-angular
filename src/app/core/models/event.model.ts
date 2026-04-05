@@ -25,5 +25,5 @@ export interface CalendarEvent {
     organizer: string;
     createdAt: Date;
     updatedAt: Date;
-    price: number;
+    price?: number;
 }

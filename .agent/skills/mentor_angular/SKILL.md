@@ -20,4 +20,4 @@ El estilo visual de la aplicación debe basarse en el diseño de referencia adju
 - **Layout:** Uso intensivo de grillas visibles (CSS Grid) para separar días y eventos.
 - **Tipografía:** Textos muy grandes y con pesos gruesos (Bold/Black) para los títulos y meses (ej. "CALENDAR", "January").
 - **Colores:** Monocromático (Blanco/Gris claro y Negro) con uso estratégico de pequeños puntos de color (cuadrados rojos o negros) para denotar el estado o categoría de los eventos.
-- **Interacción:** Cuando el usuario trabaje en la UI, guíalo hacia el uso de CSS Grid, Flexbox y propiedades modernas de SCSS/CSS puro en lugar de librerías prediseñadas restrictivas, para mantener el control total del pixel-perfect.
+- **Interacción:** El usuario utilizará **Tailwind CSS**. Guíalo para que explote las utilidades puras de Tailwind (`grid`, `grid-cols-4`, utilidades tipográficas masivas como `text-7xl`, `font-black`, y bordes sólidos `border-black`) para construir layouts brutalistas/editoriales sin depender de CSS manual.

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 import { CalendarEvent, EventCategory, EventStatus } from "../models/event.model";
 
 @Injectable({
@@ -18,7 +18,10 @@ export class EventService {
       category: EventCategory.Concert,
       status: EventStatus.Available,
       imageUrl: 'https://via.placeholder.com/150',
-      price: 45000
+      price: 45000,
+      organizer: 'Rock Producciones',
+      createdAt: new Date(),
+      updatedAt: new Date() 
     },
     {
       id: '2',
@@ -28,7 +31,10 @@ export class EventService {
       location: 'Museo Bellas Artes',
       category: EventCategory.Meeting,
       status: EventStatus.CurrentExhibition,
-      price: 0
+      price: 0,
+      organizer: 'Rock Producciones',
+      createdAt: new Date(),
+      updatedAt: new Date() 
     },
     {
       id: '3',
@@ -37,8 +43,11 @@ export class EventService {
       date: new Date('2026-06-01T19:00:00'),
       location: 'Cine Hoyts',
       category: EventCategory.Movie,
-      status: EventStatus.FullyBooked,
-      price: 5000
+      status: EventStatus.fullybooked,
+      price: 5000,
+      organizer: 'Rock Producciones',
+      createdAt: new Date(),
+      updatedAt: new Date() 
     }
   ];
 
