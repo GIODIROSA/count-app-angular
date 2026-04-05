@@ -1,44 +1,65 @@
-<div class= "text-black bg-white p-4 md:p-8 min-h-screen">
-  
-  <!-- Header Editorial -->
-  <header class="border-b-[3px] border-black mb-8 pb-4">
-    <!-- Texto brutalista responsivo usando [] para valores arbitrarios enormes -->
-    <h1 class="text-[5rem] md:text-[8rem] lg:text-[11rem] font-black uppercase leading-none tracking-tighter m-0">
-      CALENDAR
-    </h1>
-    <h2 class="text-4xl md:text-5xl font-normal mt-4 mb-2">January</h2> 
-  </header>
+<div class="text-black bg-white p-4 md:p-8 min-h-screen">
 
-  <!-- La Grilla: Pura Magia de Tailwind -->
-  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-    
-    @for (event of events$ | async; track event.id) {
-      <article class="flex flex-col h-full">
-        
-        <!-- Día y Cuadradito de Estado -->
-        <div class="flex items-center justify-between mb-4">
-          <span class="text-2xl font-black">{{ event.date | date:'dd' }}</span>
-          
-          <!-- Cuádrado de color: Usa clases dinámicas de Tailwind según el string del enum -->
-          <span class="inline-block w-4 h-4 
+    <div class="flex justify-between text-xs font-bold">
+        <span>Clendar Concert GIO</span>
+        <span>home/calendar</span>
+    </div>
+
+    <!-- Header Editorial -->
+    <header class="border-b-[3px] border-black mb-8 pb-4">
+
+        <section class="flex justify-between items-center">
+
+            <div>
+
+                <h1
+                    class="text-[5rem] md:text-[8rem] lg:text-[11rem] font-black uppercase leading-none tracking-tighter m-0">
+                    CALENDAR
+                </h1>
+                <h2 class="text-4xl md:text-5xl font-normal mt-4 mb-2">January</h2>
+
+            </div>
+
+            <div>
+                <span>Información</span>
+                <span>Exhibition</span>
+            </div>
+
+        </section>
+
+
+    </header>
+
+    <!-- La Grilla: Pura Magia de Tailwind -->
+    <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        @for (event of events$ | async; track event.id) {
+        <article class="flex flex-col h-full">
+
+            <!-- Día y Cuadradito de Estado -->
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-2xl font-black">{{ event.date | date:'dd' }}</span>
+
+                <!-- Cuádrado de color: Usa clases dinámicas de Tailwind según el string del enum -->
+                <span class="inline-block w-4 h-4 
             {{ event.status === 'Fullybooked' ? 'bg-red-600' : '' }}
             {{ event.status === 'Current exhibition' ? 'bg-black' : '' }}
             {{ event.status === 'Available' ? 'border-2 border-black bg-transparent' : '' }}
           "></span>
-        </div>
+            </div>
 
-        <!-- Imagen (Con filtro blanco y negro opcional) -->
-        @if (event.imageUrl) {
-          <img [src]="event.imageUrl" [alt]="event.title" class="w-full aspect-[3/4] object-cover mb-4 grayscale">
+            <!-- Imagen (Con filtro blanco y negro opcional) -->
+            @if (event.imageUrl) {
+            <img [src]="event.imageUrl" [alt]="event.title" class="w-full aspect-[3/4] object-cover mb-4 grayscale">
+            }
+
+            <!-- Textos: mt-auto asegura que el borde superior pegue abajo si no hay imagen -->
+            <div class="border-t border-gray-400 pt-2 mt-auto">
+                <p class="text-base font-bold m-0 leading-tight">{{ event.title }}</p>
+                <p class="text-sm text-gray-700 m-0 mt-1">{{ event.description }}</p>
+            </div>
+
+        </article>
         }
-
-        <!-- Textos: mt-auto asegura que el borde superior pegue abajo si no hay imagen -->
-        <div class="border-t border-gray-400 pt-2 mt-auto">
-          <p class="text-base font-bold m-0 leading-tight">{{ event.title }}</p>
-          <p class="text-sm text-gray-700 m-0 mt-1">{{ event.description }}</p>
-        </div>
-
-      </article>
-    }
-  </main>
+    </main>
 </div>
